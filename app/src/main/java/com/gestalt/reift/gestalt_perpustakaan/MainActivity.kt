@@ -1,6 +1,5 @@
 package com.gestalt.reift.gestalt_perpustakaan
 
-import RentTable
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.gestalt.reift.gestalt_perpustakaan.presentation.composables.RentTable
 import com.gestalt.reift.gestalt_perpustakaan.ui.theme.GestaltPerpustakaanTheme
 import com.gestalt.reift.perpustakaan.model.Rent
 
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    RentTable(rentList = Rent.generateDummy())
+                    RentTable(listRent = Rent.generateDummy())
                 }
             }
         }
@@ -36,6 +36,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     GestaltPerpustakaanTheme {
-        RentTable(rentList = Rent.generateDummy())
+        RentTable(listRent = Rent.generateDummy())
     }
 }
