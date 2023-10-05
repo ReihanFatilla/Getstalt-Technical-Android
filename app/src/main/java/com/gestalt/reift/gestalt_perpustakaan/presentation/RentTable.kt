@@ -30,15 +30,43 @@ import com.gestalt.reift.perpustakaan.model.Rent
 import java.time.LocalDate
 
 @Composable
-fun RentTable(rentList: List<Rent>) {
+fun RentTable(listRent: List<Rent>) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
     ) {
         item {
             RentTableHeader()
         }
-
+        items(listRent){ rent ->
+            RentTableRow(rent = rent)
+        }
     }
+}
+
+@Composable
+fun RentTableRow(rent: Rent) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        RentTableRowCell(rent.id.toString(), modifier = Modifier.weight(0.4f))
+        RentTableRowCell(rent.customer.name, modifier = Modifier.weight(1f))
+        RentTableRowCell(rent.book.title, modifier = Modifier.weight(1f))
+        RentTableRowCell(rent.dateRent.toString(), modifier = Modifier.weight(1f))
+        RentTableRowCell(rent.dateReturn.toString(), modifier = Modifier.weight(1f))
+    }
+}
+
+@Composable
+fun RentTableRowCell(text: String, modifier: Modifier){
+    Text(
+        text,
+        modifier = modifier
+            .border(1.dp, Color.Gray)
+            .padding(8.dp),
+        maxLines = 1,
+        fontSize = 11.sp
+    )
 }
 
 @Composable
@@ -46,7 +74,7 @@ fun RentTableHeader() {
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {
-        RentTableHeaderCell("ID", modifier = Modifier.weight(0.5f))
+        RentTableHeaderCell("ID", modifier = Modifier.weight(0.4f))
         RentTableHeaderCell("Customer", modifier = Modifier.weight(1f))
         RentTableHeaderCell("Book", modifier = Modifier.weight(1f))
         RentTableHeaderCell("Take", modifier = Modifier.weight(1f))
@@ -84,7 +112,7 @@ fun RentTableScreen() {
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
-            RentTable(rentList = rentList)
+            RentTable(listRent = rentList)
         }
     )
 }
