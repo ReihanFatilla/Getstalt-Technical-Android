@@ -35,10 +35,10 @@ fun RentTableScreen() {
 
                 },
                 onPriceRangeClicked = {
-
+                    listRent
                 }
                 )
-            RentTable(listRent = rentList)
+            RentTable(listRent = listRent)
         }
     )
 }
