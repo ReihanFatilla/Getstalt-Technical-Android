@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.gestalt.reift.gestalt_perpustakaan.presentation.RentTableScreen
 import com.gestalt.reift.gestalt_perpustakaan.presentation.composables.RentTable
 import com.gestalt.reift.gestalt_perpustakaan.ui.theme.GestaltPerpustakaanTheme
 import com.gestalt.reift.perpustakaan.model.Rent
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    RentTable(listRent = Rent.generateDummy())
+                    RentTableScreen()
                 }
             }
         }
@@ -36,6 +37,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     GestaltPerpustakaanTheme {
-        RentTable(listRent = Rent.generateDummy())
+        RentTableScreen()
     }
 }

@@ -12,7 +12,7 @@ import com.gestalt.reift.perpustakaan.model.Rent
 @Composable
 fun RentTable(listRent: List<Rent>) {
     LazyColumn(
-        modifier = Modifier.fillMaxSize().padding(12.dp),
+        modifier = Modifier.fillMaxSize(),
     ) {
         item {
             RentTableHeader()
