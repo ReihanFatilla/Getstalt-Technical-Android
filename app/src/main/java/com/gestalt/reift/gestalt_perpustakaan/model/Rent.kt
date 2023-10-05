@@ -1,4 +1,4 @@
-package com.gestalt.reift.perpustakaan.model
+package com.gestalt.reift.gestalt_perpustakaan.model
 
 import java.time.LocalDate
 import kotlin.random.Random
@@ -23,21 +23,18 @@ data class Rent(
             val bookId = Random.nextInt(101, 200)
             val bookTitle = "Book${bookId}"
             val author = "Author${bookId}"
-            val priceRent = Random.nextInt(10, 50)
+            val priceRent = Random.nextInt(1000, 20000)
             val bookCategory = "Category${Random.nextInt(1, 5)}"
             return Book(bookId, bookTitle, author, priceRent, bookCategory)
         }
-        fun generateDummy(): List<Rent> {
-
-            return List(50) { index ->
-                Rent(
-                    id = Random.nextInt(1001, 2000),
-                    customer = generateDummyCustomer(),
-                    book = generateDummyBook(),
-                    dateRent = LocalDate.now(),
-                    dateReturn = LocalDate.now().plusDays(Random.nextLong(1, 30))
-                )
-            }
+        val dummy = List(50) { index ->
+            Rent(
+                id = Random.nextInt(1001, 2000),
+                customer = generateDummyCustomer(),
+                book = generateDummyBook(),
+                dateRent = LocalDate.now(),
+                dateReturn = LocalDate.now().plusDays(Random.nextLong(1, 30))
+            )
         }
     }
 }

@@ -26,7 +26,7 @@ fun RentTableHeader() {
         RentTableHeaderCell("ID", modifier = Modifier.weight(0.4f))
         RentTableHeaderCell("Customer", modifier = Modifier.weight(1f))
         RentTableHeaderCell("Book", modifier = Modifier.weight(1f))
-        RentTableHeaderCell("Take", modifier = Modifier.weight(1f))
+        RentTableHeaderCell("Price", modifier = Modifier.weight(1f))
         RentTableHeaderCell("Return", modifier = Modifier.weight(1f))
     }
 }

@@ -11,7 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.gestalt.reift.perpustakaan.model.Rent
+import com.gestalt.reift.gestalt_perpustakaan.model.Rent
+import com.gestalt.reift.gestalt_perpustakaan.utils.Utils.toRupiah
 
 @Composable
 fun RentTableRow(rent: Rent) {
@@ -22,7 +23,7 @@ fun RentTableRow(rent: Rent) {
         RentTableRowCell(rent.id.toString(), modifier = Modifier.weight(0.4f))
         RentTableRowCell(rent.customer.name, modifier = Modifier.weight(1f))
         RentTableRowCell(rent.book.title, modifier = Modifier.weight(1f))
-        RentTableRowCell(rent.dateRent.toString(), modifier = Modifier.weight(1f))
+        RentTableRowCell(rent.book.priceRent.toRupiah(), modifier = Modifier.weight(1f))
         RentTableRowCell(rent.dateReturn.toString(), modifier = Modifier.weight(1f))
     }
 }

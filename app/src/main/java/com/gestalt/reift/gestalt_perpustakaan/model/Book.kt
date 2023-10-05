@@ -1,4 +1,4 @@
-package com.gestalt.reift.perpustakaan.model
+package com.gestalt.reift.gestalt_perpustakaan.model
 
 data class Book(
     val id: Int,
